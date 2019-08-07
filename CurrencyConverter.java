@@ -5,6 +5,8 @@
  */
 package currencyconverterapplication;
 
+import java.awt.Color;
+
 /**
  *
  * @author Ajax
@@ -30,7 +32,6 @@ public class CurrencyConverter extends javax.swing.JFrame {
 
         fromButtonGroup = new javax.swing.ButtonGroup();
         toButtonGroup = new javax.swing.ButtonGroup();
-        headerLabel = new javax.swing.JLabel();
         USA1 = new javax.swing.JRadioButton();
         CAN1 = new javax.swing.JRadioButton();
         UK1 = new javax.swing.JRadioButton();
@@ -45,10 +46,10 @@ public class CurrencyConverter extends javax.swing.JFrame {
         resultText = new javax.swing.JTextArea();
         amountLabel = new javax.swing.JLabel();
         amountTextField = new javax.swing.JTextField();
+        currencyAppToggleBtn = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        headerLabel.setText("Convert from one country to another");
 
         fromButtonGroup.add(USA1);
         USA1.setText("United States of America");
@@ -99,62 +100,74 @@ public class CurrencyConverter extends javax.swing.JFrame {
 
         amountLabel.setText("Enter the amount");
 
+        currencyAppToggleBtn.setText("Convert to Indian Currrency");
+        currencyAppToggleBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                currencyAppToggleBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Welcome to Currency Converter");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(161, 161, 161)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(287, 287, 287)
-                        .addComponent(headerLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(USA1)
+                                        .addGap(139, 139, 139))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(CAN1)
+                                        .addGap(221, 221, 221)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(UK1)
+                                    .addGap(185, 185, 185)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(KUW1)
+                                    .addComponent(amountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(USA1)
-                                                .addGap(139, 139, 139))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(CAN1)
-                                                .addGap(221, 221, 221)))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(UK1)
-                                            .addGap(185, 185, 185)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(KUW1)
-                                            .addComponent(amountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(KUW2)
-                                            .addComponent(UK2)
-                                            .addComponent(CAN2)
-                                            .addComponent(USA2))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(amountTextField)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(convertBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(36, 36, 36)
-                                .addComponent(resetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(24, 24, 24)))
-                .addGap(245, 245, 245))
+                                    .addComponent(KUW2)
+                                    .addComponent(UK2)
+                                    .addComponent(CAN2)
+                                    .addComponent(USA2))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(amountTextField)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(convertBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(36, 36, 36)
+                        .addComponent(resetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(269, 269, 269))
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(resultTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 687, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(resultTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 687, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(275, 275, 275)
+                        .addComponent(currencyAppToggleBtn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(308, 308, 308)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(headerLabel)
-                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(9, 9, 9)
+                .addComponent(currencyAppToggleBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(USA1)
                     .addComponent(USA2))
@@ -225,13 +238,46 @@ public class CurrencyConverter extends javax.swing.JFrame {
             toCountryName = "Kuwait";
         }
         amountEntered = Double.valueOf(amountTextField.getText());
-        output = "From Country Name: \t"+fromCountryName+"\nTo Country Name: \t"+toCountryName+"\nEntered Amount: \t"+amountEntered+"\nConverted Amount: \t"+app.convertFromTo(fromCountryCode,toCountryCode,amountEntered);
+        if(currencyAppToggleBtn.isSelected()){
+            currencyAppToggleBtn.setBackground(Color.red);
+            currencyAppToggleBtn.setText("Convert from one country to another");
+            output = "From Country Name: \t"+fromCountryName+"\nTo Country Name: \t"+toCountryName+"\nEntered Amount: \t"+amountEntered+"\nConverted Amount: \t"+app.convertFromTo(fromCountryCode,toCountryCode,amountEntered);
+            //resultText.setText(output);
+        }
+        else{
+            currencyAppToggleBtn.setBackground(Color.green);
+            currencyAppToggleBtn.setText("Convert to Indian Currrency");
+            output = "Selected country: \t"+fromCountryName+"\nEntered Amount: \t"+amountEntered+"\nConverted Amount: \t"+app.convert(fromCountryCode, amountEntered);        
+         }
         resultText.setText(output);
+        
     }                                          
 
     private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
     }                                        
+
+    private void currencyAppToggleBtnActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        // TODO add your handling code here:
+        if(currencyAppToggleBtn.isSelected()){
+            currencyAppToggleBtn.setBackground(Color.red);
+            currencyAppToggleBtn.setText("Convert from one country to another");
+            USA2.setVisible(true);
+            CAN2.setVisible(true);
+            UK2.setVisible(true);
+            KUW2.setVisible(true);
+            
+        }
+        else{
+            currencyAppToggleBtn.setBackground(Color.green);
+            currencyAppToggleBtn.setText("Convert to Indian Currrency");
+            USA2.setVisible(false);
+            CAN2.setVisible(false);
+            UK2.setVisible(false);
+            KUW2.setVisible(false);
+            
+        }
+    }                                                    
 
     /**
      * @param args the command line arguments
@@ -280,8 +326,9 @@ public class CurrencyConverter extends javax.swing.JFrame {
     private javax.swing.JLabel amountLabel;
     private javax.swing.JTextField amountTextField;
     private javax.swing.JButton convertBtn;
+    private javax.swing.JToggleButton currencyAppToggleBtn;
     private javax.swing.ButtonGroup fromButtonGroup;
-    private javax.swing.JLabel headerLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton resetBtn;
     private javax.swing.JTextArea resultText;
     private javax.swing.JScrollPane resultTextArea;
